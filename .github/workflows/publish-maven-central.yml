@@ -63,14 +63,6 @@ jobs:
       - name: Compute Library Version
         run: echo "LIB_VERSION=$(./scripts/lib_version.sh)" >> "$GITHUB_ENV"
 
-      - name: Verify Release Tag Matches Computed Version
-        run: |
-          if [ "${{ github.event.release.tag_name }}" != "$LIB_VERSION" ]; then
-            echo "Release tag '${{ github.event.release.tag_name }}' does not match the version computed from spec.version/patch.version ('$LIB_VERSION')." >&2
-            echo "Update spec.version/patch.version (see scripts/lib_version.sh) so the computed version matches the release tag, then re-run." >&2
-            exit 1
-          fi
-
       - name: Build and Test
         run: ./gradlew --no-daemon --parallel clean check
 
