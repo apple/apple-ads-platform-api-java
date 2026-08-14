@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#
+# Pre-commit hook: auto-fix Spotless violations on staged Java files and re-stage.
+#
+# NOTE: this hook re-stages whole files. If you used `git add -p` to stage only
+# part of a file, formatting fixes to the unstaged portion of that file will be
+# swept into the commit. Stage whole files to avoid surprises.
+#
+# Installed by scripts/install-hooks.sh.
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+staged_java=$(git diff --cached --name-only --diff-filter=ACM -- '*.java' || true)
+if [ -z "$staged_java" ]; then
+  exit 0
+fi
+
+./gradlew --quiet spotlessApply
+
+while IFS= read -r f; do
+  [ -n "$f" ] && [ -f "$f" ] && git add -- "$f"
+done <<< "$staged_java"
