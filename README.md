@@ -30,6 +30,9 @@ Gradle (`build.gradle`):
 ```groovy
 implementation "com.apple.ads:apple-ads-platform:VERSION"
 ```
+
+This library requires Java 21 or newer.
+
 ## Getting Started
 
 This library makes it easy to create a [`Retrofit2`](https://square.github.io/retrofit/)
