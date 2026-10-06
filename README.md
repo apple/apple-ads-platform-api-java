@@ -229,5 +229,3 @@ Spotless also runs as part of `./gradlew build`. To check or fix formatting manu
 ## License
 
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.
-
-This project includes third-party software components; see [ACKNOWLEDGEMENTS](ACKNOWLEDGEMENTS) for attribution.
