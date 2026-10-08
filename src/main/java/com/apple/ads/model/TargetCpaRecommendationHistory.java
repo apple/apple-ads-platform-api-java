@@ -52,11 +52,7 @@ import jakarta.validation.Valid;
   TargetCpaRecommendationHistory.JSON_PROPERTY_AVERAGE_C_P_T,
   TargetCpaRecommendationHistory.JSON_PROPERTY_IMPRESSION,
   TargetCpaRecommendationHistory.JSON_PROPERTY_TTR,
-  TargetCpaRecommendationHistory.JSON_PROPERTY_TAPS,
-  TargetCpaRecommendationHistory.JSON_PROPERTY_EXPECTED_INSTALLS,
-  TargetCpaRecommendationHistory.JSON_PROPERTY_EXPECTED_SPEND,
-  TargetCpaRecommendationHistory.JSON_PROPERTY_EXPECTED_TAPS,
-  TargetCpaRecommendationHistory.JSON_PROPERTY_EXPECTED_C_P_A
+  TargetCpaRecommendationHistory.JSON_PROPERTY_TAPS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class TargetCpaRecommendationHistory {
@@ -147,22 +143,6 @@ public class TargetCpaRecommendationHistory {
   public static final String JSON_PROPERTY_TAPS = "taps";
   @jakarta.annotation.Nullable
   private Long taps;
-
-  public static final String JSON_PROPERTY_EXPECTED_INSTALLS = "expectedInstalls";
-  @jakarta.annotation.Nullable
-  private Long expectedInstalls;
-
-  public static final String JSON_PROPERTY_EXPECTED_SPEND = "expectedSpend";
-  @jakarta.annotation.Nullable
-  private RecommendationMoney expectedSpend;
-
-  public static final String JSON_PROPERTY_EXPECTED_TAPS = "expectedTaps";
-  @jakarta.annotation.Nullable
-  private Long expectedTaps;
-
-  public static final String JSON_PROPERTY_EXPECTED_C_P_A = "expectedCPA";
-  @jakarta.annotation.Nullable
-  private RecommendationMoney expectedCPA;
 
   public TargetCpaRecommendationHistory() {
   }
@@ -752,112 +732,6 @@ public class TargetCpaRecommendationHistory {
     this.taps = taps;
   }
 
-  public TargetCpaRecommendationHistory expectedInstalls(@jakarta.annotation.Nullable Long expectedInstalls) {
-    
-    this.expectedInstalls = expectedInstalls;
-    return this;
-  }
-
-  /**
-   * Get expectedInstalls
-   * @return expectedInstalls
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_INSTALLS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedInstalls() {
-    return expectedInstalls;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_INSTALLS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedInstalls(@jakarta.annotation.Nullable Long expectedInstalls) {
-    this.expectedInstalls = expectedInstalls;
-  }
-
-  public TargetCpaRecommendationHistory expectedSpend(@jakarta.annotation.Nullable RecommendationMoney expectedSpend) {
-    
-    this.expectedSpend = expectedSpend;
-    return this;
-  }
-
-  /**
-   * Get expectedSpend
-   * @return expectedSpend
-   */
-  @jakarta.annotation.Nullable
-  @Valid
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_SPEND, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public RecommendationMoney getExpectedSpend() {
-    return expectedSpend;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_SPEND, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedSpend(@jakarta.annotation.Nullable RecommendationMoney expectedSpend) {
-    this.expectedSpend = expectedSpend;
-  }
-
-  public TargetCpaRecommendationHistory expectedTaps(@jakarta.annotation.Nullable Long expectedTaps) {
-    
-    this.expectedTaps = expectedTaps;
-    return this;
-  }
-
-  /**
-   * Get expectedTaps
-   * @return expectedTaps
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedTaps() {
-    return expectedTaps;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedTaps(@jakarta.annotation.Nullable Long expectedTaps) {
-    this.expectedTaps = expectedTaps;
-  }
-
-  public TargetCpaRecommendationHistory expectedCPA(@jakarta.annotation.Nullable RecommendationMoney expectedCPA) {
-    
-    this.expectedCPA = expectedCPA;
-    return this;
-  }
-
-  /**
-   * Get expectedCPA
-   * @return expectedCPA
-   */
-  @jakarta.annotation.Nullable
-  @Valid
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_C_P_A, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public RecommendationMoney getExpectedCPA() {
-    return expectedCPA;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_C_P_A, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedCPA(@jakarta.annotation.Nullable RecommendationMoney expectedCPA) {
-    this.expectedCPA = expectedCPA;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -889,16 +763,12 @@ public class TargetCpaRecommendationHistory {
         Objects.equals(this.averageCPT, targetCpaRecommendationHistory.averageCPT) &&
         Objects.equals(this.impression, targetCpaRecommendationHistory.impression) &&
         Objects.equals(this.ttr, targetCpaRecommendationHistory.ttr) &&
-        Objects.equals(this.taps, targetCpaRecommendationHistory.taps) &&
-        Objects.equals(this.expectedInstalls, targetCpaRecommendationHistory.expectedInstalls) &&
-        Objects.equals(this.expectedSpend, targetCpaRecommendationHistory.expectedSpend) &&
-        Objects.equals(this.expectedTaps, targetCpaRecommendationHistory.expectedTaps) &&
-        Objects.equals(this.expectedCPA, targetCpaRecommendationHistory.expectedCPA);
+        Objects.equals(this.taps, targetCpaRecommendationHistory.taps);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recommendationId, recommendationType, promotedObjectId, promotedObjectType, campaignId, campaignName, state, status, appliedTargetCPA, recommendedTargetCPA, creationTime, modificationTime, appliedTime, expirationTime, rank, installs, spend, averageCPA, averageCPT, impression, ttr, taps, expectedInstalls, expectedSpend, expectedTaps, expectedCPA);
+    return Objects.hash(recommendationId, recommendationType, promotedObjectId, promotedObjectType, campaignId, campaignName, state, status, appliedTargetCPA, recommendedTargetCPA, creationTime, modificationTime, appliedTime, expirationTime, rank, installs, spend, averageCPA, averageCPT, impression, ttr, taps);
   }
 
   @Override
@@ -927,10 +797,6 @@ public class TargetCpaRecommendationHistory {
     sb.append("    impression: ").append(toIndentedString(impression)).append("\n");
     sb.append("    ttr: ").append(toIndentedString(ttr)).append("\n");
     sb.append("    taps: ").append(toIndentedString(taps)).append("\n");
-    sb.append("    expectedInstalls: ").append(toIndentedString(expectedInstalls)).append("\n");
-    sb.append("    expectedSpend: ").append(toIndentedString(expectedSpend)).append("\n");
-    sb.append("    expectedTaps: ").append(toIndentedString(expectedTaps)).append("\n");
-    sb.append("    expectedCPA: ").append(toIndentedString(expectedCPA)).append("\n");
     sb.append("}");
     return sb.toString();
   }

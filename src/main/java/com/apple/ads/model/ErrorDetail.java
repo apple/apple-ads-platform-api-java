@@ -16,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -30,7 +32,8 @@ import jakarta.validation.Valid;
  */
 @JsonPropertyOrder({
   ErrorDetail.JSON_PROPERTY_CODE,
-  ErrorDetail.JSON_PROPERTY_MESSAGE
+  ErrorDetail.JSON_PROPERTY_MESSAGE,
+  ErrorDetail.JSON_PROPERTY_INFO
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ErrorDetail {
@@ -41,6 +44,10 @@ public class ErrorDetail {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   @jakarta.annotation.Nullable
   private JsonNullable<String> message = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_INFO = "info";
+  @jakarta.annotation.Nullable
+  private Map<String, Object> info;
 
   public ErrorDetail() {
   }
@@ -106,6 +113,40 @@ public class ErrorDetail {
     this.message = JsonNullable.<String>of(message);
   }
 
+  public ErrorDetail info(@jakarta.annotation.Nullable Map<String, Object> info) {
+    
+    this.info = info;
+    return this;
+  }
+
+  public ErrorDetail putInfoItem(String key, Object infoItem) {
+    if (this.info == null) {
+      this.info = new HashMap<>();
+    }
+    this.info.put(key, infoItem);
+    return this;
+  }
+
+  /**
+   * Get info
+   * @return info
+   */
+  @jakarta.annotation.Nullable
+
+  @JsonProperty(value = JSON_PROPERTY_INFO, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Object> getInfo() {
+    return info;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_INFO, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInfo(@jakarta.annotation.Nullable Map<String, Object> info) {
+    this.info = info;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -117,7 +158,8 @@ public class ErrorDetail {
     }
     ErrorDetail errorDetail = (ErrorDetail) o;
     return Objects.equals(this.code, errorDetail.code) &&
-        equalsNullable(this.message, errorDetail.message);
+        equalsNullable(this.message, errorDetail.message) &&
+        Objects.equals(this.info, errorDetail.info);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -126,7 +168,7 @@ public class ErrorDetail {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, hashCodeNullable(message));
+    return Objects.hash(code, hashCodeNullable(message), info);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -142,6 +184,7 @@ public class ErrorDetail {
     sb.append("class ErrorDetail {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    info: ").append(toIndentedString(info)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -195,7 +195,7 @@ public class LocationGroupCreate {
   }
 
   /**
-   * Structured rules for DYNAMIC groups. Use instead of raw &#x60;query&#x60;. Supported fields: adminArea, locality, postalCode, locationId. Operators: EQUALS, NOT_EQUALS, IN, NOT_IN. Use &#x60;value&#x60; for all operators (string for EQUALS/NOT_EQUALS, array for IN/NOT_IN). 
+   * Structured rules for DYNAMIC groups. Supported fields: adminArea, locality, postalCode, locationId. Operators: EQUALS, NOT_EQUALS, IN, NOT_IN. Use &#x60;value&#x60; for all operators (string for EQUALS/NOT_EQUALS, array for IN/NOT_IN). 
    * @return rules
    */
   @jakarta.annotation.Nullable

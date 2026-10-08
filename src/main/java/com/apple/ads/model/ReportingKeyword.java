@@ -70,7 +70,7 @@ public class ReportingKeyword {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    ACTIVE(String.valueOf("ACTIVE")),
+    ENABLED(String.valueOf("ENABLED")),
     
     PAUSED(String.valueOf("PAUSED")),
     

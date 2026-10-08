@@ -34,6 +34,7 @@ import jakarta.validation.Valid;
 @JsonPropertyOrder({
   DailyCapRecommendation.JSON_PROPERTY_ID,
   DailyCapRecommendation.JSON_PROPERTY_RECOMMENDATION_TYPE,
+  DailyCapRecommendation.JSON_PROPERTY_AD_ACCOUNT_ID,
   DailyCapRecommendation.JSON_PROPERTY_PROMOTED_OBJECT_ID,
   DailyCapRecommendation.JSON_PROPERTY_PROMOTED_OBJECT_TYPE,
   DailyCapRecommendation.JSON_PROPERTY_CAMPAIGN_ID,
@@ -52,10 +53,8 @@ import jakarta.validation.Valid;
   DailyCapRecommendation.JSON_PROPERTY_IMPRESSION,
   DailyCapRecommendation.JSON_PROPERTY_TTR,
   DailyCapRecommendation.JSON_PROPERTY_TAPS,
-  DailyCapRecommendation.JSON_PROPERTY_EXPECTED_IMPRESSIONS,
   DailyCapRecommendation.JSON_PROPERTY_EXPECTED_INSTALLS,
   DailyCapRecommendation.JSON_PROPERTY_EXPECTED_SPEND,
-  DailyCapRecommendation.JSON_PROPERTY_EXPECTED_TAPS,
   DailyCapRecommendation.JSON_PROPERTY_EXPECTED_CPA,
   DailyCapRecommendation.JSON_PROPERTY_BID_STRATEGY
 })
@@ -68,6 +67,10 @@ public class DailyCapRecommendation {
   public static final String JSON_PROPERTY_RECOMMENDATION_TYPE = "recommendationType";
   @jakarta.annotation.Nullable
   private RecommendationCategory recommendationType;
+
+  public static final String JSON_PROPERTY_AD_ACCOUNT_ID = "adAccountId";
+  @jakarta.annotation.Nullable
+  private Long adAccountId;
 
   public static final String JSON_PROPERTY_PROMOTED_OBJECT_ID = "promotedObjectId";
   @jakarta.annotation.Nullable
@@ -141,10 +144,6 @@ public class DailyCapRecommendation {
   @jakarta.annotation.Nullable
   private Long taps;
 
-  public static final String JSON_PROPERTY_EXPECTED_IMPRESSIONS = "expectedImpressions";
-  @jakarta.annotation.Nullable
-  private Long expectedImpressions;
-
   public static final String JSON_PROPERTY_EXPECTED_INSTALLS = "expectedInstalls";
   @jakarta.annotation.Nullable
   private Long expectedInstalls;
@@ -152,10 +151,6 @@ public class DailyCapRecommendation {
   public static final String JSON_PROPERTY_EXPECTED_SPEND = "expectedSpend";
   @jakarta.annotation.Nullable
   private RecommendationMoney expectedSpend;
-
-  public static final String JSON_PROPERTY_EXPECTED_TAPS = "expectedTaps";
-  @jakarta.annotation.Nullable
-  private Long expectedTaps;
 
   public static final String JSON_PROPERTY_EXPECTED_CPA = "expectedCpa";
   @jakarta.annotation.Nullable
@@ -219,6 +214,32 @@ public class DailyCapRecommendation {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRecommendationType(@jakarta.annotation.Nullable RecommendationCategory recommendationType) {
     this.recommendationType = recommendationType;
+  }
+
+  public DailyCapRecommendation adAccountId(@jakarta.annotation.Nullable Long adAccountId) {
+    
+    this.adAccountId = adAccountId;
+    return this;
+  }
+
+  /**
+   * The ad account this recommendation belongs to.
+   * @return adAccountId
+   */
+  @jakarta.annotation.Nullable
+
+  @JsonProperty(value = JSON_PROPERTY_AD_ACCOUNT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getAdAccountId() {
+    return adAccountId;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_AD_ACCOUNT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAdAccountId(@jakarta.annotation.Nullable Long adAccountId) {
+    this.adAccountId = adAccountId;
   }
 
   public DailyCapRecommendation promotedObjectId(@jakarta.annotation.Nullable String promotedObjectId) {
@@ -700,32 +721,6 @@ public class DailyCapRecommendation {
     this.taps = taps;
   }
 
-  public DailyCapRecommendation expectedImpressions(@jakarta.annotation.Nullable Long expectedImpressions) {
-    
-    this.expectedImpressions = expectedImpressions;
-    return this;
-  }
-
-  /**
-   * Get expectedImpressions
-   * @return expectedImpressions
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedImpressions() {
-    return expectedImpressions;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedImpressions(@jakarta.annotation.Nullable Long expectedImpressions) {
-    this.expectedImpressions = expectedImpressions;
-  }
-
   public DailyCapRecommendation expectedInstalls(@jakarta.annotation.Nullable Long expectedInstalls) {
     
     this.expectedInstalls = expectedInstalls;
@@ -777,32 +772,6 @@ public class DailyCapRecommendation {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpectedSpend(@jakarta.annotation.Nullable RecommendationMoney expectedSpend) {
     this.expectedSpend = expectedSpend;
-  }
-
-  public DailyCapRecommendation expectedTaps(@jakarta.annotation.Nullable Long expectedTaps) {
-    
-    this.expectedTaps = expectedTaps;
-    return this;
-  }
-
-  /**
-   * Get expectedTaps
-   * @return expectedTaps
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedTaps() {
-    return expectedTaps;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedTaps(@jakarta.annotation.Nullable Long expectedTaps) {
-    this.expectedTaps = expectedTaps;
   }
 
   public DailyCapRecommendation expectedCpa(@jakarta.annotation.Nullable RecommendationMoney expectedCpa) {
@@ -871,6 +840,7 @@ public class DailyCapRecommendation {
     DailyCapRecommendation dailyCapRecommendation = (DailyCapRecommendation) o;
     return Objects.equals(this.id, dailyCapRecommendation.id) &&
         Objects.equals(this.recommendationType, dailyCapRecommendation.recommendationType) &&
+        Objects.equals(this.adAccountId, dailyCapRecommendation.adAccountId) &&
         Objects.equals(this.promotedObjectId, dailyCapRecommendation.promotedObjectId) &&
         Objects.equals(this.promotedObjectType, dailyCapRecommendation.promotedObjectType) &&
         Objects.equals(this.campaignId, dailyCapRecommendation.campaignId) &&
@@ -889,17 +859,15 @@ public class DailyCapRecommendation {
         Objects.equals(this.impression, dailyCapRecommendation.impression) &&
         Objects.equals(this.ttr, dailyCapRecommendation.ttr) &&
         Objects.equals(this.taps, dailyCapRecommendation.taps) &&
-        Objects.equals(this.expectedImpressions, dailyCapRecommendation.expectedImpressions) &&
         Objects.equals(this.expectedInstalls, dailyCapRecommendation.expectedInstalls) &&
         Objects.equals(this.expectedSpend, dailyCapRecommendation.expectedSpend) &&
-        Objects.equals(this.expectedTaps, dailyCapRecommendation.expectedTaps) &&
         Objects.equals(this.expectedCpa, dailyCapRecommendation.expectedCpa) &&
         Objects.equals(this.bidStrategy, dailyCapRecommendation.bidStrategy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, recommendationType, promotedObjectId, promotedObjectType, campaignId, campaignName, suggestedDailyBudgetAmount, dailyBudget, state, status, creationTime, modificationTime, expirationTime, installs, spend, averageCPA, averageCPT, impression, ttr, taps, expectedImpressions, expectedInstalls, expectedSpend, expectedTaps, expectedCpa, bidStrategy);
+    return Objects.hash(id, recommendationType, adAccountId, promotedObjectId, promotedObjectType, campaignId, campaignName, suggestedDailyBudgetAmount, dailyBudget, state, status, creationTime, modificationTime, expirationTime, installs, spend, averageCPA, averageCPT, impression, ttr, taps, expectedInstalls, expectedSpend, expectedCpa, bidStrategy);
   }
 
   @Override
@@ -908,6 +876,7 @@ public class DailyCapRecommendation {
     sb.append("class DailyCapRecommendation {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    recommendationType: ").append(toIndentedString(recommendationType)).append("\n");
+    sb.append("    adAccountId: ").append(toIndentedString(adAccountId)).append("\n");
     sb.append("    promotedObjectId: ").append(toIndentedString(promotedObjectId)).append("\n");
     sb.append("    promotedObjectType: ").append(toIndentedString(promotedObjectType)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
@@ -926,10 +895,8 @@ public class DailyCapRecommendation {
     sb.append("    impression: ").append(toIndentedString(impression)).append("\n");
     sb.append("    ttr: ").append(toIndentedString(ttr)).append("\n");
     sb.append("    taps: ").append(toIndentedString(taps)).append("\n");
-    sb.append("    expectedImpressions: ").append(toIndentedString(expectedImpressions)).append("\n");
     sb.append("    expectedInstalls: ").append(toIndentedString(expectedInstalls)).append("\n");
     sb.append("    expectedSpend: ").append(toIndentedString(expectedSpend)).append("\n");
-    sb.append("    expectedTaps: ").append(toIndentedString(expectedTaps)).append("\n");
     sb.append("    expectedCpa: ").append(toIndentedString(expectedCpa)).append("\n");
     sb.append("    bidStrategy: ").append(toIndentedString(bidStrategy)).append("\n");
     sb.append("}");

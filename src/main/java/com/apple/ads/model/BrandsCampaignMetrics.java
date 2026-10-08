@@ -21,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import jakarta.validation.constraints.*;
@@ -57,7 +56,7 @@ import jakarta.validation.Valid;
 public class BrandsCampaignMetrics {
   public static final String JSON_PROPERTY_DATE = "date";
   @jakarta.annotation.Nullable
-  private LocalDate date;
+  private String date;
 
   public static final String JSON_PROPERTY_LOCAL_SPEND = "localSpend";
   @jakarta.annotation.Nullable
@@ -142,30 +141,29 @@ public class BrandsCampaignMetrics {
   public BrandsCampaignMetrics() {
   }
 
-  public BrandsCampaignMetrics date(@jakarta.annotation.Nullable LocalDate date) {
+  public BrandsCampaignMetrics date(@jakarta.annotation.Nullable String date) {
     
     this.date = date;
     return this;
   }
 
   /**
-   * Report date in YYYY-MM-DD format.
+   * Report date. YYYY-MM-DD for DAILY, WEEKLY and MONTHLY granularity; YYYY-MM-DD HH for HOURLY granularity.
    * @return date
    */
   @jakarta.annotation.Nullable
-  @Valid
 
   @JsonProperty(value = JSON_PROPERTY_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDate() {
+  public String getDate() {
     return date;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDate(@jakarta.annotation.Nullable LocalDate date) {
+  public void setDate(@jakarta.annotation.Nullable String date) {
     this.date = date;
   }
 

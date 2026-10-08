@@ -30,7 +30,7 @@ import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 
 /**
- * Request body for APPS promoted object type. Supported groupBy values: deviceClass, ageRange, gender, countryCode, adminArea, locality, storefront, countryOrRegion. Entity-specific groupBy restrictions apply server-side (e.g. KEYWORD and SEARCHTERM exclude ageRange, gender, countryCode, adminArea, locality). 
+ * Request body for APPS promoted object type. Supported groupBy values: deviceClass, ageRange, gender, countryCode, adminArea, locality, countryOrRegion. Entity-specific groupBy restrictions apply server-side (e.g. KEYWORD and SEARCHTERM exclude ageRange, gender, countryCode, adminArea, locality). 
  */
 @JsonPropertyOrder({
   AppsReportingRequest.JSON_PROPERTY_PAGINATION,
@@ -74,8 +74,6 @@ public class AppsReportingRequest {
     ADMIN_AREA(String.valueOf("adminArea")),
     
     LOCALITY(String.valueOf("locality")),
-    
-    STOREFRONT(String.valueOf("storefront")),
     
     COUNTRY_OR_REGION(String.valueOf("countryOrRegion")),
     

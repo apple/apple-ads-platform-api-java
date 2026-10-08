@@ -205,7 +205,7 @@ public class SharedBudgetUpdate {
    * @return adAccountIds
    */
   @jakarta.annotation.Nullable
-
+ @Size(min=1)
   @JsonProperty(value = JSON_PROPERTY_AD_ACCOUNT_IDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -53,20 +53,8 @@ import jakarta.validation.Valid;
   DailyCapRecommendationHistory.JSON_PROPERTY_IMPRESSION,
   DailyCapRecommendationHistory.JSON_PROPERTY_TTR,
   DailyCapRecommendationHistory.JSON_PROPERTY_TAPS,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_IMPRESSIONS_LOW,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_IMPRESSIONS_HIGH,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_IMPRESSIONS,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_INSTALLS_LOW,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_INSTALLS_HIGH,
   DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_INSTALLS,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_SPEND_LOW,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_SPEND_HIGH,
   DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_SPEND,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_TAPS_LOW,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_TAPS_HIGH,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_TAPS,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_CPA_LOW,
-  DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_CPA_HIGH,
   DailyCapRecommendationHistory.JSON_PROPERTY_EXPECTED_CPA
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
@@ -159,61 +147,13 @@ public class DailyCapRecommendationHistory {
   @jakarta.annotation.Nullable
   private Long taps;
 
-  public static final String JSON_PROPERTY_EXPECTED_IMPRESSIONS_LOW = "expectedImpressionsLow";
-  @jakarta.annotation.Nullable
-  private Long expectedImpressionsLow;
-
-  public static final String JSON_PROPERTY_EXPECTED_IMPRESSIONS_HIGH = "expectedImpressionsHigh";
-  @jakarta.annotation.Nullable
-  private Long expectedImpressionsHigh;
-
-  public static final String JSON_PROPERTY_EXPECTED_IMPRESSIONS = "expectedImpressions";
-  @jakarta.annotation.Nullable
-  private Long expectedImpressions;
-
-  public static final String JSON_PROPERTY_EXPECTED_INSTALLS_LOW = "expectedInstallsLow";
-  @jakarta.annotation.Nullable
-  private Long expectedInstallsLow;
-
-  public static final String JSON_PROPERTY_EXPECTED_INSTALLS_HIGH = "expectedInstallsHigh";
-  @jakarta.annotation.Nullable
-  private Long expectedInstallsHigh;
-
   public static final String JSON_PROPERTY_EXPECTED_INSTALLS = "expectedInstalls";
   @jakarta.annotation.Nullable
   private Long expectedInstalls;
 
-  public static final String JSON_PROPERTY_EXPECTED_SPEND_LOW = "expectedSpendLow";
-  @jakarta.annotation.Nullable
-  private RecommendationMoney expectedSpendLow;
-
-  public static final String JSON_PROPERTY_EXPECTED_SPEND_HIGH = "expectedSpendHigh";
-  @jakarta.annotation.Nullable
-  private RecommendationMoney expectedSpendHigh;
-
   public static final String JSON_PROPERTY_EXPECTED_SPEND = "expectedSpend";
   @jakarta.annotation.Nullable
   private RecommendationMoney expectedSpend;
-
-  public static final String JSON_PROPERTY_EXPECTED_TAPS_LOW = "expectedTapsLow";
-  @jakarta.annotation.Nullable
-  private Long expectedTapsLow;
-
-  public static final String JSON_PROPERTY_EXPECTED_TAPS_HIGH = "expectedTapsHigh";
-  @jakarta.annotation.Nullable
-  private Long expectedTapsHigh;
-
-  public static final String JSON_PROPERTY_EXPECTED_TAPS = "expectedTaps";
-  @jakarta.annotation.Nullable
-  private Long expectedTaps;
-
-  public static final String JSON_PROPERTY_EXPECTED_CPA_LOW = "expectedCpaLow";
-  @jakarta.annotation.Nullable
-  private RecommendationMoney expectedCpaLow;
-
-  public static final String JSON_PROPERTY_EXPECTED_CPA_HIGH = "expectedCpaHigh";
-  @jakarta.annotation.Nullable
-  private RecommendationMoney expectedCpaHigh;
 
   public static final String JSON_PROPERTY_EXPECTED_CPA = "expectedCpa";
   @jakarta.annotation.Nullable
@@ -807,136 +747,6 @@ public class DailyCapRecommendationHistory {
     this.taps = taps;
   }
 
-  public DailyCapRecommendationHistory expectedImpressionsLow(@jakarta.annotation.Nullable Long expectedImpressionsLow) {
-    
-    this.expectedImpressionsLow = expectedImpressionsLow;
-    return this;
-  }
-
-  /**
-   * Get expectedImpressionsLow
-   * @return expectedImpressionsLow
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedImpressionsLow() {
-    return expectedImpressionsLow;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedImpressionsLow(@jakarta.annotation.Nullable Long expectedImpressionsLow) {
-    this.expectedImpressionsLow = expectedImpressionsLow;
-  }
-
-  public DailyCapRecommendationHistory expectedImpressionsHigh(@jakarta.annotation.Nullable Long expectedImpressionsHigh) {
-    
-    this.expectedImpressionsHigh = expectedImpressionsHigh;
-    return this;
-  }
-
-  /**
-   * Get expectedImpressionsHigh
-   * @return expectedImpressionsHigh
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedImpressionsHigh() {
-    return expectedImpressionsHigh;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedImpressionsHigh(@jakarta.annotation.Nullable Long expectedImpressionsHigh) {
-    this.expectedImpressionsHigh = expectedImpressionsHigh;
-  }
-
-  public DailyCapRecommendationHistory expectedImpressions(@jakarta.annotation.Nullable Long expectedImpressions) {
-    
-    this.expectedImpressions = expectedImpressions;
-    return this;
-  }
-
-  /**
-   * Get expectedImpressions
-   * @return expectedImpressions
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedImpressions() {
-    return expectedImpressions;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_IMPRESSIONS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedImpressions(@jakarta.annotation.Nullable Long expectedImpressions) {
-    this.expectedImpressions = expectedImpressions;
-  }
-
-  public DailyCapRecommendationHistory expectedInstallsLow(@jakarta.annotation.Nullable Long expectedInstallsLow) {
-    
-    this.expectedInstallsLow = expectedInstallsLow;
-    return this;
-  }
-
-  /**
-   * Get expectedInstallsLow
-   * @return expectedInstallsLow
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_INSTALLS_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedInstallsLow() {
-    return expectedInstallsLow;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_INSTALLS_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedInstallsLow(@jakarta.annotation.Nullable Long expectedInstallsLow) {
-    this.expectedInstallsLow = expectedInstallsLow;
-  }
-
-  public DailyCapRecommendationHistory expectedInstallsHigh(@jakarta.annotation.Nullable Long expectedInstallsHigh) {
-    
-    this.expectedInstallsHigh = expectedInstallsHigh;
-    return this;
-  }
-
-  /**
-   * Get expectedInstallsHigh
-   * @return expectedInstallsHigh
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_INSTALLS_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedInstallsHigh() {
-    return expectedInstallsHigh;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_INSTALLS_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedInstallsHigh(@jakarta.annotation.Nullable Long expectedInstallsHigh) {
-    this.expectedInstallsHigh = expectedInstallsHigh;
-  }
-
   public DailyCapRecommendationHistory expectedInstalls(@jakarta.annotation.Nullable Long expectedInstalls) {
     
     this.expectedInstalls = expectedInstalls;
@@ -961,60 +771,6 @@ public class DailyCapRecommendationHistory {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpectedInstalls(@jakarta.annotation.Nullable Long expectedInstalls) {
     this.expectedInstalls = expectedInstalls;
-  }
-
-  public DailyCapRecommendationHistory expectedSpendLow(@jakarta.annotation.Nullable RecommendationMoney expectedSpendLow) {
-    
-    this.expectedSpendLow = expectedSpendLow;
-    return this;
-  }
-
-  /**
-   * Get expectedSpendLow
-   * @return expectedSpendLow
-   */
-  @jakarta.annotation.Nullable
-  @Valid
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_SPEND_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public RecommendationMoney getExpectedSpendLow() {
-    return expectedSpendLow;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_SPEND_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedSpendLow(@jakarta.annotation.Nullable RecommendationMoney expectedSpendLow) {
-    this.expectedSpendLow = expectedSpendLow;
-  }
-
-  public DailyCapRecommendationHistory expectedSpendHigh(@jakarta.annotation.Nullable RecommendationMoney expectedSpendHigh) {
-    
-    this.expectedSpendHigh = expectedSpendHigh;
-    return this;
-  }
-
-  /**
-   * Get expectedSpendHigh
-   * @return expectedSpendHigh
-   */
-  @jakarta.annotation.Nullable
-  @Valid
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_SPEND_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public RecommendationMoney getExpectedSpendHigh() {
-    return expectedSpendHigh;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_SPEND_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedSpendHigh(@jakarta.annotation.Nullable RecommendationMoney expectedSpendHigh) {
-    this.expectedSpendHigh = expectedSpendHigh;
   }
 
   public DailyCapRecommendationHistory expectedSpend(@jakarta.annotation.Nullable RecommendationMoney expectedSpend) {
@@ -1042,138 +798,6 @@ public class DailyCapRecommendationHistory {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpectedSpend(@jakarta.annotation.Nullable RecommendationMoney expectedSpend) {
     this.expectedSpend = expectedSpend;
-  }
-
-  public DailyCapRecommendationHistory expectedTapsLow(@jakarta.annotation.Nullable Long expectedTapsLow) {
-    
-    this.expectedTapsLow = expectedTapsLow;
-    return this;
-  }
-
-  /**
-   * Get expectedTapsLow
-   * @return expectedTapsLow
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedTapsLow() {
-    return expectedTapsLow;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedTapsLow(@jakarta.annotation.Nullable Long expectedTapsLow) {
-    this.expectedTapsLow = expectedTapsLow;
-  }
-
-  public DailyCapRecommendationHistory expectedTapsHigh(@jakarta.annotation.Nullable Long expectedTapsHigh) {
-    
-    this.expectedTapsHigh = expectedTapsHigh;
-    return this;
-  }
-
-  /**
-   * Get expectedTapsHigh
-   * @return expectedTapsHigh
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedTapsHigh() {
-    return expectedTapsHigh;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedTapsHigh(@jakarta.annotation.Nullable Long expectedTapsHigh) {
-    this.expectedTapsHigh = expectedTapsHigh;
-  }
-
-  public DailyCapRecommendationHistory expectedTaps(@jakarta.annotation.Nullable Long expectedTaps) {
-    
-    this.expectedTaps = expectedTaps;
-    return this;
-  }
-
-  /**
-   * Get expectedTaps
-   * @return expectedTaps
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpectedTaps() {
-    return expectedTaps;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_TAPS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedTaps(@jakarta.annotation.Nullable Long expectedTaps) {
-    this.expectedTaps = expectedTaps;
-  }
-
-  public DailyCapRecommendationHistory expectedCpaLow(@jakarta.annotation.Nullable RecommendationMoney expectedCpaLow) {
-    
-    this.expectedCpaLow = expectedCpaLow;
-    return this;
-  }
-
-  /**
-   * Get expectedCpaLow
-   * @return expectedCpaLow
-   */
-  @jakarta.annotation.Nullable
-  @Valid
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_CPA_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public RecommendationMoney getExpectedCpaLow() {
-    return expectedCpaLow;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_CPA_LOW, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedCpaLow(@jakarta.annotation.Nullable RecommendationMoney expectedCpaLow) {
-    this.expectedCpaLow = expectedCpaLow;
-  }
-
-  public DailyCapRecommendationHistory expectedCpaHigh(@jakarta.annotation.Nullable RecommendationMoney expectedCpaHigh) {
-    
-    this.expectedCpaHigh = expectedCpaHigh;
-    return this;
-  }
-
-  /**
-   * Get expectedCpaHigh
-   * @return expectedCpaHigh
-   */
-  @jakarta.annotation.Nullable
-  @Valid
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_CPA_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public RecommendationMoney getExpectedCpaHigh() {
-    return expectedCpaHigh;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_EXPECTED_CPA_HIGH, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectedCpaHigh(@jakarta.annotation.Nullable RecommendationMoney expectedCpaHigh) {
-    this.expectedCpaHigh = expectedCpaHigh;
   }
 
   public DailyCapRecommendationHistory expectedCpa(@jakarta.annotation.Nullable RecommendationMoney expectedCpa) {
@@ -1235,26 +859,14 @@ public class DailyCapRecommendationHistory {
         Objects.equals(this.impression, dailyCapRecommendationHistory.impression) &&
         Objects.equals(this.ttr, dailyCapRecommendationHistory.ttr) &&
         Objects.equals(this.taps, dailyCapRecommendationHistory.taps) &&
-        Objects.equals(this.expectedImpressionsLow, dailyCapRecommendationHistory.expectedImpressionsLow) &&
-        Objects.equals(this.expectedImpressionsHigh, dailyCapRecommendationHistory.expectedImpressionsHigh) &&
-        Objects.equals(this.expectedImpressions, dailyCapRecommendationHistory.expectedImpressions) &&
-        Objects.equals(this.expectedInstallsLow, dailyCapRecommendationHistory.expectedInstallsLow) &&
-        Objects.equals(this.expectedInstallsHigh, dailyCapRecommendationHistory.expectedInstallsHigh) &&
         Objects.equals(this.expectedInstalls, dailyCapRecommendationHistory.expectedInstalls) &&
-        Objects.equals(this.expectedSpendLow, dailyCapRecommendationHistory.expectedSpendLow) &&
-        Objects.equals(this.expectedSpendHigh, dailyCapRecommendationHistory.expectedSpendHigh) &&
         Objects.equals(this.expectedSpend, dailyCapRecommendationHistory.expectedSpend) &&
-        Objects.equals(this.expectedTapsLow, dailyCapRecommendationHistory.expectedTapsLow) &&
-        Objects.equals(this.expectedTapsHigh, dailyCapRecommendationHistory.expectedTapsHigh) &&
-        Objects.equals(this.expectedTaps, dailyCapRecommendationHistory.expectedTaps) &&
-        Objects.equals(this.expectedCpaLow, dailyCapRecommendationHistory.expectedCpaLow) &&
-        Objects.equals(this.expectedCpaHigh, dailyCapRecommendationHistory.expectedCpaHigh) &&
         Objects.equals(this.expectedCpa, dailyCapRecommendationHistory.expectedCpa);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recommendationId, recommendationType, promotedObjectId, promotedObjectType, campaignId, campaignName, state, status, appliedDailyBudgetAmount, suggestedDailyBudgetAmount, creationTime, modificationTime, appliedTime, expirationTime, rank, installs, spend, averageCPA, averageCPT, impression, ttr, taps, expectedImpressionsLow, expectedImpressionsHigh, expectedImpressions, expectedInstallsLow, expectedInstallsHigh, expectedInstalls, expectedSpendLow, expectedSpendHigh, expectedSpend, expectedTapsLow, expectedTapsHigh, expectedTaps, expectedCpaLow, expectedCpaHigh, expectedCpa);
+    return Objects.hash(recommendationId, recommendationType, promotedObjectId, promotedObjectType, campaignId, campaignName, state, status, appliedDailyBudgetAmount, suggestedDailyBudgetAmount, creationTime, modificationTime, appliedTime, expirationTime, rank, installs, spend, averageCPA, averageCPT, impression, ttr, taps, expectedInstalls, expectedSpend, expectedCpa);
   }
 
   @Override
@@ -1283,20 +895,8 @@ public class DailyCapRecommendationHistory {
     sb.append("    impression: ").append(toIndentedString(impression)).append("\n");
     sb.append("    ttr: ").append(toIndentedString(ttr)).append("\n");
     sb.append("    taps: ").append(toIndentedString(taps)).append("\n");
-    sb.append("    expectedImpressionsLow: ").append(toIndentedString(expectedImpressionsLow)).append("\n");
-    sb.append("    expectedImpressionsHigh: ").append(toIndentedString(expectedImpressionsHigh)).append("\n");
-    sb.append("    expectedImpressions: ").append(toIndentedString(expectedImpressions)).append("\n");
-    sb.append("    expectedInstallsLow: ").append(toIndentedString(expectedInstallsLow)).append("\n");
-    sb.append("    expectedInstallsHigh: ").append(toIndentedString(expectedInstallsHigh)).append("\n");
     sb.append("    expectedInstalls: ").append(toIndentedString(expectedInstalls)).append("\n");
-    sb.append("    expectedSpendLow: ").append(toIndentedString(expectedSpendLow)).append("\n");
-    sb.append("    expectedSpendHigh: ").append(toIndentedString(expectedSpendHigh)).append("\n");
     sb.append("    expectedSpend: ").append(toIndentedString(expectedSpend)).append("\n");
-    sb.append("    expectedTapsLow: ").append(toIndentedString(expectedTapsLow)).append("\n");
-    sb.append("    expectedTapsHigh: ").append(toIndentedString(expectedTapsHigh)).append("\n");
-    sb.append("    expectedTaps: ").append(toIndentedString(expectedTaps)).append("\n");
-    sb.append("    expectedCpaLow: ").append(toIndentedString(expectedCpaLow)).append("\n");
-    sb.append("    expectedCpaHigh: ").append(toIndentedString(expectedCpaHigh)).append("\n");
     sb.append("    expectedCpa: ").append(toIndentedString(expectedCpa)).append("\n");
     sb.append("}");
     return sb.toString();
