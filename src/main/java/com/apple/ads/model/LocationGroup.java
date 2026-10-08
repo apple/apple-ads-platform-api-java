@@ -44,7 +44,6 @@ import jakarta.validation.Valid;
   LocationGroup.JSON_PROPERTY_NAME,
   LocationGroup.JSON_PROPERTY_GROUP_TYPE,
   LocationGroup.JSON_PROPERTY_SYSTEM_STATUS,
-  LocationGroup.JSON_PROPERTY_QUERY,
   LocationGroup.JSON_PROPERTY_RULES,
   LocationGroup.JSON_PROPERTY_LOCATION_IDS,
   LocationGroup.JSON_PROPERTY_IS_ALL_LOCATIONS_GROUP,
@@ -126,10 +125,6 @@ public class LocationGroup {
   public static final String JSON_PROPERTY_SYSTEM_STATUS = "systemStatus";
   @jakarta.annotation.Nullable
   private SystemStatusEnum systemStatus;
-
-  public static final String JSON_PROPERTY_QUERY = "query";
-  @jakarta.annotation.Nullable
-  private String query;
 
   public static final String JSON_PROPERTY_RULES = "rules";
   @jakarta.annotation.Nullable
@@ -392,32 +387,6 @@ public class LocationGroup {
     this.systemStatus = systemStatus;
   }
 
-  public LocationGroup query(@jakarta.annotation.Nullable String query) {
-    
-    this.query = query;
-    return this;
-  }
-
-  /**
-   * RSQL query for DYNAMIC type (read-only, generated from rules)
-   * @return query
-   */
-  @jakarta.annotation.Nullable
-
-  @JsonProperty(value = JSON_PROPERTY_QUERY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getQuery() {
-    return query;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_QUERY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuery(@jakarta.annotation.Nullable String query) {
-    this.query = query;
-  }
-
   public LocationGroup rules(@jakarta.annotation.Nullable List<@Valid Rule> rules) {
     
     this.rules = rules;
@@ -433,7 +402,7 @@ public class LocationGroup {
   }
 
   /**
-   * Structured rules for DYNAMIC groups. Converted to RSQL &#x60;query&#x60; on the server. Supported fields: adminArea, locality, postalCode, locationId. Operators: EQUALS, NOT_EQUALS (single value), IN, NOT_IN (multi-value with &#x60;value&#x60; array). 
+   * Structured rules for DYNAMIC groups. Converted to RSQL on the server. Supported fields: adminArea, locality, postalCode, locationId. Operators: EQUALS, NOT_EQUALS (single value), IN, NOT_IN (multi-value with &#x60;value&#x60; array). 
    * @return rules
    */
   @jakarta.annotation.Nullable
@@ -599,7 +568,6 @@ public class LocationGroup {
         Objects.equals(this.name, locationGroup.name) &&
         Objects.equals(this.groupType, locationGroup.groupType) &&
         Objects.equals(this.systemStatus, locationGroup.systemStatus) &&
-        Objects.equals(this.query, locationGroup.query) &&
         Objects.equals(this.rules, locationGroup.rules) &&
         Objects.equals(this.locationIds, locationGroup.locationIds) &&
         Objects.equals(this.isAllLocationsGroup, locationGroup.isAllLocationsGroup) &&
@@ -614,7 +582,7 @@ public class LocationGroup {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, hashCodeNullable(creationTime), hashCodeNullable(modificationTime), brandId, adAccountId, name, groupType, systemStatus, query, rules, locationIds, isAllLocationsGroup, description, groupTotal, eligibility);
+    return Objects.hash(id, hashCodeNullable(creationTime), hashCodeNullable(modificationTime), brandId, adAccountId, name, groupType, systemStatus, rules, locationIds, isAllLocationsGroup, description, groupTotal, eligibility);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -636,7 +604,6 @@ public class LocationGroup {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
     sb.append("    systemStatus: ").append(toIndentedString(systemStatus)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
     sb.append("    locationIds: ").append(toIndentedString(locationIds)).append("\n");
     sb.append("    isAllLocationsGroup: ").append(toIndentedString(isAllLocationsGroup)).append("\n");

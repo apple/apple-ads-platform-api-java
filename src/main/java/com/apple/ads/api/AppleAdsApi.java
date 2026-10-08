@@ -70,6 +70,8 @@ import com.apple.ads.model.ImpressionShareQueryResponse;
 import com.apple.ads.model.KeywordCreate;
 import com.apple.ads.model.KeywordCreateBulkRequest;
 import com.apple.ads.model.KeywordCreateBulkResponse;
+import com.apple.ads.model.KeywordDeleteBulkRequest;
+import com.apple.ads.model.KeywordDeleteBulkResponse;
 import com.apple.ads.model.KeywordQueryResponse;
 import com.apple.ads.model.KeywordResponse;
 import com.apple.ads.model.KeywordUpdate;
@@ -86,6 +88,8 @@ import com.apple.ads.model.MeResponse;
 import com.apple.ads.model.NegativeKeywordCreate;
 import com.apple.ads.model.NegativeKeywordCreateBulkRequest;
 import com.apple.ads.model.NegativeKeywordCreateBulkResponse;
+import com.apple.ads.model.NegativeKeywordDeleteBulkRequest;
+import com.apple.ads.model.NegativeKeywordDeleteBulkResponse;
 import com.apple.ads.model.NegativeKeywordQueryResponse;
 import com.apple.ads.model.NegativeKeywordResponse;
 import com.apple.ads.model.NegativeKeywordUpdate;
@@ -346,7 +350,7 @@ public interface AppleAdsApi {
 
   /**
    * Get app ad group reports
-   * Retrieve reporting data for ad groups. **groupBy (APPS):** deviceClass, ageRange, gender, countryCode, adminArea, locality, storefront, countryOrRegion **HOURLY granularity** requires the date range to start within the last 7 days. **WEEKLY granularity** requires the end date to be at least 14 days in the past. **MONTHLY granularity** requires the end date to be at least 90 days in the past. 
+   * Retrieve reporting data for ad groups. **groupBy (APPS):** deviceClass, ageRange, gender, countryCode, adminArea, locality, countryOrRegion **HOURLY granularity** requires the date range to start within the last 7 days. **WEEKLY granularity** requires the end date to be at least 14 days in the past. **MONTHLY granularity** requires the end date to be at least 90 days in the past. 
    * @param xApContext  (required)
    * @param appsReportingRequest  (required)
    * @return Call&lt;AppsAdGroupReportResponse&gt;
@@ -376,7 +380,7 @@ public interface AppleAdsApi {
 
   /**
    * Get app campaign reports
-   * Retrieve reporting data for campaigns. **groupBy (APPS):** deviceClass, ageRange, gender, countryCode, adminArea, locality, storefront, countryOrRegion **HOURLY granularity** requires the date range to start within the last 7 days. **WEEKLY granularity** requires the end date to be at least 14 days in the past. **MONTHLY granularity** requires the end date to be at least 90 days in the past. 
+   * Retrieve reporting data for campaigns. **groupBy (APPS):** deviceClass, ageRange, gender, countryCode, adminArea, locality, countryOrRegion **HOURLY granularity** requires the date range to start within the last 7 days. **WEEKLY granularity** requires the end date to be at least 14 days in the past. **MONTHLY granularity** requires the end date to be at least 90 days in the past. 
    * @param xApContext  (required)
    * @param appsReportingRequest  (required)
    * @return Call&lt;AppsCampaignReportResponse&gt;
@@ -904,6 +908,21 @@ public interface AppleAdsApi {
 
   /**
    * 
+   * BulkDelete for keywords
+   * @param xApContext  (required)
+   * @param keywordDeleteBulkRequest  (optional)
+   * @return Call&lt;KeywordDeleteBulkResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("keywords/bulk-delete")
+  Call<KeywordDeleteBulkResponse> keywordsBulkDeletePost(
+    @retrofit2.http.Header("X-Ap-Context") String xApContext, @retrofit2.http.Body KeywordDeleteBulkRequest keywordDeleteBulkRequest
+  );
+
+  /**
+   * 
    * BulkUpdate for keywords
    * @param xApContext  (required)
    * @param keywordUpdateBulkRequest  (optional)
@@ -1000,6 +1019,21 @@ public interface AppleAdsApi {
   @POST("negative-keywords/bulk-create")
   Call<NegativeKeywordCreateBulkResponse> negativeKeywordsBulkCreatePost(
     @retrofit2.http.Header("X-Ap-Context") String xApContext, @retrofit2.http.Body NegativeKeywordCreateBulkRequest negativeKeywordCreateBulkRequest
+  );
+
+  /**
+   * 
+   * BulkDelete for negative-keywords
+   * @param xApContext  (required)
+   * @param negativeKeywordDeleteBulkRequest  (optional)
+   * @return Call&lt;NegativeKeywordDeleteBulkResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("negative-keywords/bulk-delete")
+  Call<NegativeKeywordDeleteBulkResponse> negativeKeywordsBulkDeletePost(
+    @retrofit2.http.Header("X-Ap-Context") String xApContext, @retrofit2.http.Body NegativeKeywordDeleteBulkRequest negativeKeywordDeleteBulkRequest
   );
 
   /**

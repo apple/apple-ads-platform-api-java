@@ -209,7 +209,7 @@ public class SharedBudgetCreate {
    */
   @jakarta.annotation.Nonnull
   @NotNull
- @Size(min=1,max=1)
+ @Size(min=1)
   @JsonProperty(value = JSON_PROPERTY_AD_ACCOUNT_IDS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
