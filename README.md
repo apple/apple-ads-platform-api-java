@@ -109,7 +109,7 @@ token as an HTTP header.
 AccessTokenProvider myTokenProvider = new MyAccessTokenProvider(...);
 
 AppleAdsApi api = AppleAdsApiClientBuilder
-    .withAccessTokenProvider(clientSecretProvider)
+    .withAccessTokenProvider(myTokenProvider)
     .build();
 ```
 
@@ -156,7 +156,7 @@ QueryRequest runningCampaignsRequest = new QueryRequest()
 String contextHeader = ContextHeader.fromAdAccountId(...);
 
 CampaignQueryResponse response = api.campaignsQueryPost(contextHeader, runningCampaignsRequest)
-      .execute());
+      .execute();
 ```
 #### Get a Business Brand by ID
 ```java
@@ -168,7 +168,7 @@ String brandId = "...";
 String contextHeader = ContextHeader.fromAdAccountId(...);
 
 BrandsResponse response = api.getBrand(contextHeader, brandId)
-    .execute());
+    .execute();
 ```
 
 #### Update a Keyword Bid
@@ -186,7 +186,7 @@ KeywordUpdate keywordUpdate = new KeywordUpdate()
         .currency("USD"));
 
 KeywordResponse response = api.keywordsIdPut(keywordId, contextHeader, keywordUpdate)
-    .execute());
+    .execute();
 ```
 
 ## Keeping Your Credentials Secure

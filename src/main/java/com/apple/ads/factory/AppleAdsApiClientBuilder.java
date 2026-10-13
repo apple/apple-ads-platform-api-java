@@ -63,7 +63,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  */
 public class AppleAdsApiClientBuilder {
 
-  private static final String DEFAULT_BASE_URL = "https://api.apple.ads.com/v1/";
+  private static final String DEFAULT_BASE_URL = "https://api.ads.apple.com/v1/";
   private static final String DEFAULT_AUTH_BASE_URL = "https://appleid.apple.com/";
 
   private enum AuthMode {PRIVATE_KEY, CLIENT_SECRET_PROVIDER, ACCESS_TOKEN_PROVIDER }
